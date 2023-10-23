@@ -1,0 +1,3 @@
+Longest Compound Word is ratcatdogcat
+Second Longest Compound Word is catsdogcats
+Time taken to process the given file 0 milliseconds
