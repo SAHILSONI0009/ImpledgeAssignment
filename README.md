@@ -1,39 +1,60 @@
-Approach:
+# Longest and Second Longest Compound Word Finder
 
-Trie Construction: The code starts by constructing a Trie data structure to store a list of words from the input file.
+## Introduction
 
-Queue for BFS: It uses a queue to perform a Breadth-First Search (BFS) on the Trie to explore potential compound words.
+The "Longest and Second Longest Compound Word Finder" is a C++ program that efficiently identifies the longest and second-longest compound words in a given input file. It leverages the power of a Trie data structure and Breadth-First Search (BFS) for exploring compound words.
 
-BFS Exploration: The BFS starts with each word from the input as a starting point and explores possible compound words.
+## Intution
 
-Suffix Search: For each word, it checks for suffixes in the Trie. If a suffix is found, it is added to the queue for further exploration.
+- **Longest and Second Longest:** The program identifies the longest and second-longest compound words in a given list.
 
-Longest and Second Longest: The code keeps track of the longest compound word and the second-longest compound word found during the BFS traversal.
+- **Trie Data Structure:** The efficient Trie data structure is used for storing and searching words.
 
-Timing Execution: It measures the time taken to process the file using the <chrono> library.
+- **BFS Exploration:** A Breadth-First Search (BFS) approach is employed to traverse and discover compound words.
 
-Algorithm:
+- **Execution Timing:** The program measures and displays the time taken to process the input file.
 
-Trie Construction:
+## Getting Started
 
-A Trie is a tree-like data structure where each node represents a character.
-The Trie is constructed for all words in the input. For each word:
-Starting from the root, it follows the path based on the characters in the word.
-For each character, it checks if a corresponding child node exists. If not, it creates one.
-The last node of each word is marked as the end of the word.
-BFS for Compound Words:
+## Algorithm
 
-The BFS is used to explore compound words.
-It starts with each word as the root of a BFS tree.
-For each word, it searches for suffixes in the Trie:
-It checks if a suffix exists in the Trie.
-If a suffix is found, it is added to the BFS queue for further exploration.
-The BFS explores potential compound words by repeatedly adding and removing words from the queue and appending suffixes.
-Tracking Longest and Second Longest:
+### Trie Initialization:
+- Create an empty Trie data structure with a root node.
+### Insertion:
+- Read each word from the input file and insert it into the Trie.
+- For each word, traverse the Trie starting from the root.
+- Create new nodes for characters that are not present in the Trie.
+- Set the isEndOfWord flag for the last character of each word to indicate the end of a valid word.
+### Suffix Search:
+- For each word in the input file, explore its suffixes using a breadth-first search (BFS) approach.
+- Use a queue (q) to store pairs of original words and their suffixes.
+- Initialize q with the original words
+### Longest Compound Word Search:
+- While the queue is not empty, dequeue a pair containing the original word and its suffix.
+- For each pair, find the suffix's valid word endings in the Trie.
+- If the suffix has valid word endings, add new pairs to the queue with updated suffixes.
+- Track the longest and second-longest compound words found during this process.
+### Result Output:- 
+- After BFS traversal, the code outputs the longest and second-longest compound words found.
+### Performance Measurement:
+- Measure and display the time taken to process the input file using the chrono library.
 
-It maintains variables to keep track of the longest and second-longest compound words found during BFS traversal.
-When a compound word is found, it checks its length and updates these variables accordingly.
-Timing Execution:
+### Prerequisites
+
+Before you can use this program, ensure that you have the following prerequisites in place:
+
+- **C++ Compiler:** You'll need a C++ compiler, such as g++, to build and run the program.
+
+- **Text Editor or IDE:** You can use a text editor or an integrated development environment (IDE) for compiling and running the code.
+
+### Installation
+
+To set up and run the program, follow these steps:
+
+1. **Clone the Repository:** Begin by cloning this GitHub repository to your local machine using the following Git command:
+
+   ```bash
+   git clone https://github.com/SAHILSONI0009/ImpledgeAssignment
 
 It records the start time and end time to measure the execution time using the <chrono> library.
 Input and Output:
